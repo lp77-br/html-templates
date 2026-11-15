@@ -1,0 +1,135 @@
+<!--
+  HTML Templates
+  https://github.com/lp77-br/html-templates
+  Licensed under the MIT License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard — HyperCore</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .dashboard-layout { display: flex; min-height: 100vh; }
+  .sidebar { width: 260px; border-right: 1px solid var(--border); padding: 32px 24px; display: flex; flex-direction: column; }
+  .sidebar .site-logo { margin-bottom: 48px; padding-left: 8px; }
+  .sidebar-nav { display: flex; flex-direction: column; gap: 8px; }
+  .sidebar-nav a { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--r-sm); color: var(--text-2); font-family: var(--font-mono); font-size: 13px; transition: all .2s; }
+  .sidebar-nav a:hover, .sidebar-nav a.active { background: var(--surface-2); color: var(--text); }
+  
+  .main-content { flex: 1; padding: 48px; max-width: 1200px; margin: 0 auto; }
+  .page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+  .page-header h1 { font-size: 24px; }
+  
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px; }
+  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 24px; }
+  .stat-label { font-family: var(--font-mono); font-size: 11px; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+  .stat-value { font-family: var(--font-mono); font-size: 28px; font-weight: 500; color: var(--text); line-height: 1; }
+  .stat-value span { font-size: 13px; color: var(--success); margin-left: 8px; }
+  
+  .data-table-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
+  .data-table { width: 100%; border-collapse: collapse; text-align: left; font-family: var(--font-mono); font-size: 13px; }
+  .data-table th { padding: 16px 24px; background: var(--surface-2); color: var(--text-3); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); font-weight: 500; }
+  .data-table td { padding: 16px 24px; border-bottom: 1px solid var(--border); color: var(--text-2); }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table td strong { color: var(--text); }
+  .badge { display: inline-flex; padding: 2px 8px; border-radius: var(--r-sm); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+  .badge-success { background: rgba(121,200,139,0.15); color: var(--success); border: 1px solid rgba(121,200,139,0.3); }
+  .badge-danger { background: rgba(217,119,119,0.15); color: var(--danger); border: 1px solid rgba(217,119,119,0.3); }
+  
+  @media (max-width: 1024px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) {
+    .dashboard-layout { flex-direction: column; }
+    .sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--border); }
+    .main-content { padding: 24px; }
+    .stats-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="dashboard-layout">
+  <aside class="sidebar">
+    <a href="index.html" class="site-logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none">
+          <rect x="2" y="2" width="20" height="20" rx="4" fill="rgba(123,157,255,0.12)" stroke="#7b9dff" stroke-width="1.4"/>
+          <path d="M8.5 9.5 6 12l2.5 2.5M15.5 9.5 18 12l-2.5 2.5M13.5 8l-3 8" stroke="#7b9dff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <div class="brand-text"><span>HyperCore</span></div>
+    </a>
+    <nav class="sidebar-nav">
+      <a href="#" class="active">> Overview</a>
+      <a href="#">> Deployments</a>
+      <a href="#">> Telemetry</a>
+      <a href="#">> Settings</a>
+      <a href="index.html" style="margin-top: auto;">&larr; Back to site</a>
+    </nav>
+  </aside>
+  
+  <main class="main-content">
+    <header class="page-header">
+      <h1>System Overview</h1>
+      <button class="btn-primary">New Deployment</button>
+    </header>
+    
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Active Nodes</div>
+        <div class="stat-value">14</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Requests / sec</div>
+        <div class="stat-value">124.5k <span>↑ 8.2%</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">p99 Latency</div>
+        <div class="stat-value">12ms <span>↓ 2ms</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Error Rate</div>
+        <div class="stat-value">0.00%</div>
+      </div>
+    </section>
+    
+    <section class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Region</th>
+            <th>Status</th>
+            <th>Commit</th>
+            <th>Uptime</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>#dep-892</strong></td>
+            <td>us-east-1</td>
+            <td><span class="badge badge-success">Healthy</span></td>
+            <td>a1b2c3d</td>
+            <td>42d 11h</td>
+          </tr>
+          <tr>
+            <td><strong>#dep-891</strong></td>
+            <td>eu-central-1</td>
+            <td><span class="badge badge-success">Healthy</span></td>
+            <td>f9e8d7c</td>
+            <td>12d 04h</td>
+          </tr>
+          <tr>
+            <td><strong>#dep-890</strong></td>
+            <td>ap-south-1</td>
+            <td><span class="badge badge-danger">Degraded</span></td>
+            <td>4b5a6c7</td>
+            <td>2d 08h</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</div>
+</body>
+</html>
