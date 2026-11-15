@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nexus — Ship faster. Sleep better.</title>
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .hero { text-align: center; padding: 80px 24px 0; max-width: 900px; margin: 0 auto; }
+  .hero .badge { margin-bottom: 24px; }
+  .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700;
+    letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 24px; }
+  .hero p { font-size: 1.2rem; color: var(--muted);
+    max-width: 600px; margin: 0 auto 40px; }
+  .hero-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .section-features { padding-top: 100px; }
+  .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+  .card-lg { grid-column: span 4; }
+  .card-md { grid-column: span 2; }
+  .card-sm { grid-column: span 3; }
+  @media (max-width: 768px) {
+    .bento { grid-template-columns: 1fr; }
+    .card-lg, .card-md, .card-sm { grid-column: span 1; }
+  }
+</style>
+</head>
+<body>
+<div class="aurora"></div>
+<nav class="nav">
+  <a href="index.html" class="logo">Ne<span>xus</span></a>
+  <div class="nav-links">
+    <a href="index.html#features">Features</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="auth.html">Sign in</a>
+  </div>
+</nav>
+<header class="hero">
+  <div class="badge"><span class="badge-dot"></span>v2.0 is now live</div>
+  <h1 class="gradient-text">Ship faster.<br>Sleep better.</h1>
+  <p>The all-in-one platform for teams who'd rather build than fight their tools.</p>
+  <div class="hero-cta">
+    <a href="auth.html" class="btn btn-primary">Start free →</a>
+    <a href="pricing.html" class="btn btn-ghost">View pricing</a>
+  </div>
+</header>
+<section id="features" class="section-features">
+  <div class="container">
+    <div class="bento">
+      <div class="card card-lg">
+        <div class="card-icon">⚡</div>
+        <h3>Blazing fast</h3>
+        <p>Sub-50ms response times across the globe with edge deployment.</p>
+      </div>
+      <div class="card card-md">
+        <div class="card-icon">🔒</div>
+        <h3>Secure by default</h3>
+        <p>SOC 2 Type II, end-to-end encryption.</p>
+      </div>
+      <div class="card card-sm">
+        <div class="card-icon">📊</div>
+        <h3>Analytics built-in</h3>
+        <p>Know what's happening without a data team.</p>
+      </div>
+      <div class="card card-sm">
+        <div class="card-icon">🤝</div>
+        <h3>Team-first</h3>
+        <p>Permissions, audit logs, and SSO on day one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer">© 2026 Nexus. All rights reserved.</footer>
+</body>
+</html>
