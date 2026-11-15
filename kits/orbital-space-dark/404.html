@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signal Lost — Orbital</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  body { display: grid; place-items: center; padding: 24px; text-align: center; }
+  .error-container { position: relative; z-index: 1; max-width: 600px; }
+  
+  .orbit-system { width: 200px; height: 200px; margin: 0 auto 40px; position: relative; }
+  .planet { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 60px; height: 60px; background: var(--secondary); border-radius: 50%;
+    box-shadow: 0 0 30px var(--secondary); }
+  .orbit { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    border: 1px solid var(--border); border-radius: 50%; }
+  .orbit-1 { width: 120px; height: 120px; animation: spin 4s linear infinite; }
+  .orbit-2 { width: 180px; height: 180px; animation: spin 8s linear infinite reverse; }
+  .satellite { position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 10px; height: 10px; background: var(--primary); border-radius: 50%;
+    box-shadow: 0 0 10px var(--primary); }
+  @keyframes spin { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+  
+  .error-code { font-family: var(--font-display); font-size: 8rem; font-weight: 700;
+    line-height: 1; margin-bottom: 16px; }
+  .error-container h1 { font-family: var(--font-display); font-size: 2rem; margin-bottom: 16px; }
+  .error-container p { color: var(--muted); margin-bottom: 40px; font-size: 1.1rem; }
+  .error-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<div class="starfield"></div>
+<div class="error-container">
+  <div class="orbit-system">
+    <div class="orbit orbit-1"><div class="satellite"></div></div>
+    <div class="orbit orbit-2"><div class="satellite"></div></div>
+    <div class="planet"></div>
+  </div>
+  <div class="error-code gradient-text">404</div>
+  <h1>Signal Lost</h1>
+  <p>We've drifted out of known space. The coordinates you're looking for do not exist in this sector.</p>
+  <div class="error-actions">
+    <a href="index.html" class="btn btn-primary">Return to Base</a>
+    <a href="dashboard.html" class="btn btn-outline">Mission Control</a>
+  </div>
+</div>
+</body>
+</html>
