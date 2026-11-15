@@ -10,9 +10,11 @@ Built with pure HTML and CSS. No JavaScript, no frameworks, no build steps.
 |------|------|---------|
 | Landing | `index.html` | Hero, animated grid background, feature grid |
 | Dashboard | `dashboard.html` | Sidebar layout, stats cards, and a data table |
+| Docs | `docs.html` | API reference layout with code blocks and method badges |
 | Pricing | `pricing.html` | 3 tiers with highlighted "Production" plan |
 | Auth | `auth.html` | Minimalist login form with monospace inputs |
-| 404 | `404.html` | Terminal window simulation with error logs |
+| 404 | `404.html` | Terminal snippet with massive glowing error code |
+| Changelog | `changelog.html` | Vertical timeline with semantic tags (Added/Fixed) |
 
 ## Design System
 
