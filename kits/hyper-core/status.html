@@ -1,0 +1,110 @@
+<!--
+  HTML Templates
+  https://github.com/lp77-br/html-templates
+  Licensed under the MIT License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>System Status — HyperCore</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .status-container { max-width: 800px; margin: 60px auto; padding: 0 var(--gutter); }
+  
+  .status-hero { text-align: center; margin-bottom: 60px; }
+  .status-hero h1 { font-size: 32px; margin-bottom: 12px; }
+  .status-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: rgba(121,200,139,0.1); border: 1px solid rgba(121,200,139,0.3); border-radius: 999px; font-family: var(--font-mono); font-size: 14px; color: var(--success); }
+  .status-badge .dot { width: 8px; height: 8px; background: var(--success); border-radius: 50%; animation: pulse-green 2s infinite; }
+  
+  .service-list { margin-bottom: 60px; }
+  .service-item { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border); }
+  .service-name { font-family: var(--font-mono); font-size: 15px; font-weight: 500; }
+  .service-uptime { display: flex; align-items: center; gap: 16px; }
+  .uptime-bar { display: flex; gap: 2px; }
+  .uptime-bar span { width: 8px; height: 24px; background: var(--success); border-radius: 2px; opacity: 0.8; }
+  .uptime-bar span.down { background: var(--danger); }
+  .uptime-pct { font-family: var(--font-mono); font-size: 13px; color: var(--text-3); width: 50px; text-align: right; }
+  
+  .incident-log h2 { font-size: 18px; margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 12px; }
+  .incident { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 20px; margin-bottom: 16px; }
+  .incident-header { display: flex; justify-content: space-between; margin-bottom: 12px; }
+  .incident-title { font-family: var(--font-mono); font-weight: 600; color: var(--text); font-size: 15px; }
+  .incident-date { font-family: var(--font-mono); font-size: 12px; color: var(--text-3); }
+  .incident-desc { font-size: 14px; color: var(--text-2); line-height: 1.6; }
+  .incident-status { display: inline-block; margin-top: 16px; font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; padding: 2px 8px; border-radius: var(--r-sm); background: var(--surface-2); border: 1px solid var(--border-hi); }
+  
+  @media (max-width: 600px) { .service-uptime { flex-direction: column-reverse; align-items: flex-end; gap: 8px; } }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" fill="rgba(123,157,255,0.12)" stroke="#7b9dff" stroke-width="1.4"/><path d="M8.5 9.5 6 12l2.5 2.5M15.5 9.5 18 12l-2.5 2.5M13.5 8l-3 8" stroke="#7b9dff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div class="brand-text"><span>HyperCore</span></div>
+    </a>
+  </div>
+</header>
+
+<main class="status-container">
+  <div class="status-hero">
+    <h1>System Status</h1>
+    <div class="status-badge"><span class="dot"></span> All Systems Operational</div>
+  </div>
+  
+  <section class="service-list">
+    <div class="service-item">
+      <div class="service-name">API Gateway</div>
+      <div class="service-uptime">
+        <div class="uptime-bar">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="uptime-pct">100%</div>
+      </div>
+    </div>
+    <div class="service-item">
+      <div class="service-name">Edge Network (US-EAST)</div>
+      <div class="service-uptime">
+        <div class="uptime-bar">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="down"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="uptime-pct">99.98%</div>
+      </div>
+    </div>
+    <div class="service-item">
+      <div class="service-name">Database Cluster</div>
+      <div class="service-uptime">
+        <div class="uptime-bar">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="uptime-pct">100%</div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="incident-log">
+    <h2>Past Incidents</h2>
+    
+    <div class="incident">
+      <div class="incident-header">
+        <span class="incident-title">Elevated latency on US-EAST edge</span>
+        <span class="incident-date">Nov 12, 2026</span>
+      </div>
+      <p class="incident-desc">A BGP route leak from an upstream provider caused temporary packet loss for 4 minutes. Traffic was automatically re-routed to US-WEST.</p>
+      <span class="incident-status">Resolved</span>
+    </div>
+    
+    <div class="incident">
+      <div class="incident-header">
+        <span class="incident-title">API 502 Bad Gateway</span>
+        <span class="incident-date">Oct 28, 2026</span>
+      </div>
+      <p class="incident-desc">A faulty deployment caused the API gateway to crash-loop. Rollback was initiated within 90 seconds.</p>
+      <span class="incident-status">Resolved</span>
+    </div>
+  </section>
+</main>
+</body>
+</html>
