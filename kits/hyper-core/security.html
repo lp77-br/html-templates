@@ -1,0 +1,98 @@
+<!--
+  HTML Templates
+  https://github.com/lp77-br/html-templates
+  Licensed under the MIT License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security & Compliance — HyperCore</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .page-header { text-align: center; padding: 80px 24px 60px; border-bottom: 1px solid var(--border); }
+  .page-header h1 { font-size: clamp(32px, 5vw, 48px); margin-bottom: 16px; }
+  .page-header p { color: var(--text-2); font-size: 16px; max-width: 500px; margin: 0 auto; }
+  
+  .security-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: var(--max-w); margin: 60px auto; padding: 0 var(--gutter); }
+  
+  .audit-log { background: var(--bg-raised); border: 1px solid var(--border); border-radius: var(--r); padding: 24px; font-family: var(--font-mono); font-size: 13px; color: var(--text-2); }
+  .audit-log .prompt { color: var(--accent); margin-bottom: 12px; display: block; }
+  .audit-log .pass { color: var(--success); }
+  .audit-log .info { color: var(--text-3); }
+  .audit-log div { margin-bottom: 8px; }
+  
+  .compliance-badges { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 40px; max-width: var(--max-w); margin: 40px auto 80px; padding: 0 var(--gutter); }
+  .badge-item { display: flex; align-items: center; gap: 12px; background: var(--surface); border: 1px solid var(--border); padding: 16px 24px; border-radius: var(--r); flex: 1; min-width: 200px; }
+  .badge-item svg { width: 24px; height: 24px; color: var(--accent); }
+  .badge-item span { font-family: var(--font-mono); font-size: 14px; font-weight: 500; color: var(--text); }
+  
+  @media (max-width: 768px) { .security-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" fill="rgba(123,157,255,0.12)" stroke="#7b9dff" stroke-width="1.4"/><path d="M8.5 9.5 6 12l2.5 2.5M15.5 9.5 18 12l-2.5 2.5M13.5 8l-3 8" stroke="#7b9dff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div class="brand-text"><span>HyperCore</span></div>
+    </a>
+    <nav class="header-nav">
+      <a href="docs.html" class="nav-link">Docs</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="auth.html" class="btn-ghost">Sign In</a>
+    </nav>
+  </div>
+</header>
+
+<header class="page-header">
+  <h1>Security & Compliance</h1>
+  <p>Built for zero-trust environments. Encrypted at rest, in transit, and in memory.</p>
+</header>
+
+<div class="security-grid">
+  <div class="card">
+    <h3 class="card-title">End-to-End Encryption</h3>
+    <p class="card-desc">All traffic is secured with TLS 1.3. Data at rest is encrypted using AES-256-GCM with keys rotated every 90 days.</p>
+  </div>
+  <div class="card">
+    <h3 class="card-title">Role-Based Access Control</h3>
+    <p class="card-desc">Granular IAM policies. Require hardware keys (WebAuthn) for administrative actions and sensitive deployments.</p>
+  </div>
+  
+  <div class="audit-log">
+    <span class="prompt">$ hypercore audit --full</span>
+    <div><span class="pass">[PASS]</span> tls_1_3_enforced</div>
+    <div><span class="pass">[PASS]</span> aes_256_gcm_at_rest</div>
+    <div><span class="pass">[PASS]</span> webauthn_admin_access</div>
+    <div><span class="pass">[PASS]</span> db_network_isolation</div>
+    <div><span class="info">[INFO]</span> 0 vulnerabilities found</div>
+  </div>
+  
+  <div class="card">
+    <h3 class="card-title">Immutable Audit Logs</h3>
+    <p class="card-desc">Every action inside the console is logged to an append-only ledger. Stream logs directly to your SIEM via our API.</p>
+  </div>
+</div>
+
+<div class="compliance-badges">
+  <div class="badge-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <span>SOC 2 Type II</span>
+  </div>
+  <div class="badge-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    <span>GDPR Ready</span>
+  </div>
+  <div class="badge-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+    <span>HIPAA Compliant</span>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 HyperCore Systems. MIT Licensed.</p>
+</footer>
+</body>
+</html>
