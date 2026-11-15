@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nexus — Ship faster</title>
+<style>
+:root {
+  --bg: #08080c; --fg: #f0f0f5; --muted: #8888a0;
+  --accent: #6366f1; --accent-2: #a855f7;
+  --border: rgba(255,255,255,0.08); --card: rgba(255,255,255,0.03);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg);
+  color: var(--fg); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+.aurora { position: fixed; inset: 0; z-index: -1; overflow: hidden; }
+.aurora::before, .aurora::after { content: ''; position: absolute; border-radius: 50%;
+  filter: blur(120px); opacity: 0.35; }
+.aurora::before { width: 600px; height: 600px; background: var(--accent);
+  top: -200px; left: -100px; animation: float 12s ease-in-out infinite; }
+.aurora::after { width: 500px; height: 500px; background: var(--accent-2);
+  top: 100px; right: -150px; animation: float 15s ease-in-out infinite reverse; }
+@keyframes float { 0%,100% { transform: translate(0,0); } 50% { transform: translate(60px,40px); } }
+nav { display: flex; justify-content: space-between; align-items: center;
+  padding: 24px 48px; max-width: 1200px; margin: 0 auto; }
+.logo { font-weight: 700; font-size: 1.2rem; letter-spacing: -0.02em; }
+.logo span { color: var(--accent); }
+nav ul { display: flex; gap: 32px; list-style: none; }
+nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color .2s; }
+nav a:hover { color: var(--fg); }
+.hero { max-width: 900px; margin: 80px auto 0; text-align: center; padding: 0 24px; }
+.badge { display: inline-block; padding: 6px 14px; border-radius: 999px;
+  background: var(--card); border: 1px solid var(--border);
+  font-size: 0.8rem; color: var(--muted); margin-bottom: 24px; }
+.badge::before { content: '●'; color: #10b981; margin-right: 8px; }
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700;
+  letter-spacing: -0.03em; line-height: 1.05;
+  background: linear-gradient(180deg, #fff 0%, #999 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 24px; }
+.hero p { font-size: 1.2rem; color: var(--muted); max-width: 600px; margin: 0 auto 40px; }
+.cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn { padding: 14px 28px; border-radius: 10px; font-weight: 600; font-size: 0.95rem;
+  text-decoration: none; transition: all .2s; border: 1px solid transparent; }
+.btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff; box-shadow: 0 8px 30px rgba(99,102,241,0.35); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(99,102,241,0.5); }
+.btn-ghost { color: var(--fg); border-color: var(--border); background: var(--card); }
+.btn-ghost:hover { border-color: var(--muted); }
+.bento { max-width: 1200px; margin: 100px auto 0; padding: 0 24px;
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+.card { background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 28px; transition: border-color .3s, transform .3s; }
+.card:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-2px); }
+.card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.card p { color: var(--muted); font-size: 0.9rem; }
+.card-icon { width: 40px; height: 40px; border-radius: 10px; margin-bottom: 16px;
+  background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(168,85,247,0.2));
+  display: grid; place-items: center; font-size: 1.2rem; }
+.card-lg { grid-column: span 4; } .card-md { grid-column: span 2; } .card-sm { grid-column: span 3; }
+footer { text-align: center; padding: 80px 24px 40px; color: var(--muted); font-size: 0.85rem; }
+@media (max-width: 768px) {
+  nav { padding: 20px 24px; } nav ul { display: none; }
+  .bento { grid-template-columns: 1fr; }
+  .card-lg, .card-md, .card-sm { grid-column: span 1; }
+}
+</style>
+</head>
+<body>
+<div class="aurora"></div>
+<nav>
+  <div class="logo">Ne<span>xus</span></div>
+  <ul>
+    <li><a href="#">Features</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">Docs</a></li>
+    <li><a href="#">Blog</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <div class="badge">v2.0 is now live</div>
+  <h1>Ship faster.<br>Sleep better.</h1>
+  <p>The all-in-one platform for teams who'd rather build than fight their tools.</p>
+  <div class="cta">
+    <a href="#" class="btn btn-primary">Start free →</a>
+    <a href="#" class="btn btn-ghost">Book a demo</a>
+  </div>
+</section>
+<section class="bento">
+  <div class="card card-lg">
+    <div class="card-icon">⚡</div>
+    <h3>Blazing fast</h3>
+    <p>Sub-50ms response times across the globe with edge deployment.</p>
+  </div>
+  <div class="card card-md">
+    <div class="card-icon">🔒</div>
+    <h3>Secure by default</h3>
+    <p>SOC 2 Type II, end-to-end encryption.</p>
+  </div>
+  <div class="card card-sm">
+    <div class="card-icon">📊</div>
+    <h3>Analytics built-in</h3>
+    <p>Know what's happening without a data team.</p>
+  </div>
+  <div class="card card-sm">
+    <div class="card-icon">🤝</div>
+    <h3>Team-first</h3>
+    <p>Permissions, audit logs, and SSO on day one.</p>
+  </div>
+</section>
+<footer>© 2026 Nexus. All rights reserved.</footer>
+</body>
+</html>
