@@ -13,7 +13,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg);
   color: var(--fg); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-.aurora { position: fixed; inset: 0; z-index: -1; overflow: hidden; }
+.aurora { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
 .aurora::before, .aurora::after { content: ''; position: absolute; border-radius: 50%;
   filter: blur(120px); opacity: 0.35; }
 .aurora::before { width: 600px; height: 600px; background: var(--accent);
@@ -40,7 +40,8 @@ h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700;
 .hero p { font-size: 1.2rem; color: var(--muted); max-width: 600px; margin: 0 auto 40px; }
 .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .btn { padding: 14px 28px; border-radius: 10px; font-weight: 600; font-size: 0.95rem;
-  text-decoration: none; transition: all .2s; border: 1px solid transparent; }
+  text-decoration: none; transition: all .2s; border: 1px solid transparent;
+  display: inline-flex; align-items: center; justify-content: center; }
 .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: #fff; box-shadow: 0 8px 30px rgba(99,102,241,0.35); }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(99,102,241,0.5); }
