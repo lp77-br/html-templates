@@ -1,0 +1,222 @@
+<!--
+  HTML Templates
+  https://github.com/lp77-br/html-templates
+  Licensed under the MIT License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog — HyperCore</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .page-header { 
+    text-align: center; 
+    padding: 80px 24px 60px; 
+    border-bottom: 1px solid var(--border); 
+    background: radial-gradient(ellipse 60% 80% at 50% 0%, rgba(123,157,255,0.08) 0%, transparent 70%);
+  }
+  .page-header h1 { font-size: clamp(32px, 5vw, 48px); margin-bottom: 16px; letter-spacing: -0.02em; }
+  .page-header p { color: var(--text-2); font-size: 16px; max-width: 500px; margin: 0 auto; }
+  
+  .timeline-wrap { max-width: 840px; margin: 0 auto; padding: 64px 24px 100px; }
+  
+  .release { 
+    display: grid; 
+    grid-template-columns: 140px 1fr; 
+    gap: 40px; 
+    position: relative; 
+    margin-bottom: 56px;
+  }
+  .release:last-child { margin-bottom: 0; }
+  
+  .release-meta { 
+    text-align: right; 
+    padding-top: 4px; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .release-version { 
+    font-family: var(--font-mono); 
+    font-size: 18px; 
+    font-weight: 600; 
+    color: var(--text); 
+    background: var(--surface-2);
+    border: 1px solid var(--border-hi);
+    padding: 4px 10px;
+    border-radius: var(--r-sm);
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  .release-date { 
+    font-family: var(--font-mono); 
+    font-size: 12px; 
+    color: var(--text-3); 
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .release-date::before {
+    content: '>';
+    color: var(--accent);
+    font-weight: 600;
+  }
+  
+  .release-content { 
+    padding-left: 32px; 
+    border-left: 1px dashed var(--border-hi); 
+    position: relative; 
+  }
+  .release-content::before {
+    content: ''; 
+    position: absolute; 
+    left: -5px; 
+    top: 10px;
+    width: 9px; 
+    height: 9px; 
+    background: var(--accent); 
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 10px var(--accent);
+    border-radius: 50%;
+  }
+  
+  .release h2 { 
+    font-size: 20px; 
+    margin-bottom: 24px; 
+    color: var(--text); 
+    letter-spacing: -0.01em;
+  }
+  
+  .release ul { 
+    list-style: none; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 16px; 
+  }
+  .release li { 
+    display: flex; 
+    gap: 16px; 
+    font-size: 14.5px; 
+    color: var(--text-2); 
+    line-height: 1.6; 
+    align-items: flex-start;
+  }
+  
+  .tag { 
+    font-family: var(--font-mono); 
+    font-size: 12px; 
+    font-weight: 600; 
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+    width: 54px;
+    text-align: right;
+    padding-top: 2px;
+  }
+  .tag::before { content: '['; opacity: 0.5; }
+  .tag::after { content: ']'; opacity: 0.5; }
+  
+  .tag.add { color: var(--success); }
+  .tag.fix { color: var(--danger); }
+  .tag.mod { color: var(--accent-2); }
+  
+  @media (max-width: 600px) {
+    .release { 
+      grid-template-columns: 1fr; 
+      gap: 12px; 
+      margin-bottom: 40px;
+    }
+    .release-meta { 
+      text-align: left; 
+      align-items: flex-start; 
+    }
+    .release-content { 
+      padding-left: 24px; 
+    }
+    .release-content::before {
+      top: 8px;
+    }
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none">
+          <rect x="2" y="2" width="20" height="20" rx="4" fill="rgba(123,157,255,0.12)" stroke="#7b9dff" stroke-width="1.4"/>
+          <path d="M8.5 9.5 6 12l2.5 2.5M15.5 9.5 18 12l-2.5 2.5M13.5 8l-3 8" stroke="#7b9dff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <div class="brand-text"><span>HyperCore</span></div>
+    </a>
+    <nav class="header-nav">
+      <a href="docs.html" class="nav-link">Docs</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="auth.html" class="btn-ghost">Sign In</a>
+    </nav>
+  </div>
+</header>
+
+<header class="page-header">
+  <h1>System Logs</h1>
+  <p>Changelog and version history for HyperCore edge infrastructure.</p>
+</header>
+
+<div class="timeline-wrap">
+  
+  <article class="release">
+    <div class="release-meta">
+      <div class="release-version">v2.0.0</div>
+      <div class="release-date">2026-11-15</div>
+    </div>
+    <div class="release-content">
+      <h2>Edge Network Overhaul</h2>
+      <ul>
+        <li><span class="tag add">ADD</span> Custom eBPF probes for bare-metal performance.</li>
+        <li><span class="tag mod">MOD</span> CLI now uses a Rust-based binary, 3x faster execution.</li>
+        <li><span class="tag fix">FIX</span> Memory leak in WebSocket telemetry stream.</li>
+        <li><span class="tag fix">FIX</span> Race condition in deployment lock mechanism.</li>
+      </ul>
+    </div>
+  </article>
+  
+  <article class="release">
+    <div class="release-meta">
+      <div class="release-version">v1.8.4</div>
+      <div class="release-date">2026-10-22</div>
+    </div>
+    <div class="release-content">
+      <h2>Stability &amp; Security</h2>
+      <ul>
+        <li><span class="tag fix">FIX</span> CVE-2026-XXXX: Path traversal in static asset resolver.</li>
+        <li><span class="tag mod">MOD</span> Enforced TLS 1.3 for all internal service-to-service traffic.</li>
+        <li><span class="tag add">ADD</span> Support for HIPAA-compliant log scrubbing.</li>
+      </ul>
+    </div>
+  </article>
+  
+  <article class="release">
+    <div class="release-meta">
+      <div class="release-version">v1.8.0</div>
+      <div class="release-date">2026-09-05</div>
+    </div>
+    <div class="release-content">
+      <h2>Dashboard v2</h2>
+      <ul>
+        <li><span class="tag add">ADD</span> Real-time metric aggregation with zero sampling.</li>
+        <li><span class="tag add">ADD</span> Dark mode and terminal-inspired UI.</li>
+        <li><span class="tag mod">MOD</span> API rate limits increased by 50% for all tiers.</li>
+      </ul>
+    </div>
+  </article>
+
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 HyperCore Systems. MIT Licensed.</p>
+</footer>
+</body>
+</html>
