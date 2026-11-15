@@ -1,0 +1,89 @@
+<!--
+  HTML Templates
+  https://github.com/lp77-br/html-templates
+  Licensed under the MIT License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Service — HyperCore</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .terms-layout { display: flex; max-width: var(--max-w); margin: 60px auto; padding: 0 var(--gutter); gap: 64px; }
+  
+  .terms-sidebar { width: 240px; flex-shrink: 0; position: sticky; top: 100px; height: fit-content; }
+  .terms-sidebar h3 { font-family: var(--font-mono); font-size: 13px; text-transform: uppercase; color: var(--text-3); letter-spacing: 0.1em; margin-bottom: 16px; }
+  .terms-sidebar nav { display: flex; flex-direction: column; gap: 8px; }
+  .terms-sidebar a { font-size: 14px; color: var(--text-2); text-decoration: none; transition: color var(--t-fast); }
+  .terms-sidebar a:hover { color: var(--accent); }
+  
+  .terms-content { flex: 1; max-width: 680px; }
+  .terms-content h1 { font-size: 32px; margin-bottom: 16px; }
+  .terms-content .meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-3); margin-bottom: 48px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  
+  .terms-content h2 { font-size: 20px; margin: 40px 0 16px; scroll-margin-top: 100px; }
+  .terms-content p { font-size: 15px; color: var(--text-2); line-height: 1.8; margin-bottom: 20px; }
+  .terms-content ul { margin-bottom: 20px; padding-left: 20px; }
+  .terms-content li { font-size: 15px; color: var(--text-2); line-height: 1.8; margin-bottom: 8px; }
+  
+  @media (max-width: 768px) {
+    .terms-layout { flex-direction: column; gap: 32px; }
+    .terms-sidebar { display: none; }
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" fill="rgba(123,157,255,0.12)" stroke="#7b9dff" stroke-width="1.4"/><path d="M8.5 9.5 6 12l2.5 2.5M15.5 9.5 18 12l-2.5 2.5M13.5 8l-3 8" stroke="#7b9dff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div class="brand-text"><span>HyperCore</span></div>
+    </a>
+  </div>
+</header>
+
+<div class="terms-layout">
+  <aside class="terms-sidebar">
+    <h3>On this page</h3>
+    <nav>
+      <a href="#acceptance">1. Acceptance</a>
+      <a href="#usage">2. Usage Limits</a>
+      <a href="#billing">3. Billing & Refunds</a>
+      <a href="#liability">4. Limitation of Liability</a>
+      <a href="#termination">5. Termination</a>
+    </nav>
+  </aside>
+  
+  <main class="terms-content">
+    <h1>Terms of Service</h1>
+    <div class="meta">Last updated: November 15, 2026 · Version 1.0</div>
+    
+    <h2 id="acceptance">1. Acceptance of Terms</h2>
+    <p>By accessing or using the HyperCore infrastructure platform ("Service"), you agree to be bound by these Terms of Service. If you are entering into this agreement on behalf of a company or other legal entity, you represent that you have the authority to bind such entity.</p>
+    
+    <h2 id="usage">2. Usage Limits & Fair Use</h2>
+    <p>Your use of the Service is subject to the limits defined in your selected Clearance Level (Developer, Production, or Enterprise). You agree not to:</p>
+    <ul>
+      <li>Use the Service to propagate malware, conduct DDoS attacks, or engage in unauthorized penetration testing.</li>
+      <li>Attempt to bypass rate limits or reverse-engineer the eBPF routing mechanisms.</li>
+      <li>Exceed the allocated bandwidth or compute limits set by your plan.</li>
+    </ul>
+    
+    <h2 id="billing">3. Billing & Refunds</h2>
+    <p>Fees are billed monthly or annually in advance. All payments are non-refundable, except as required by law. If your usage exceeds the allocated limits, you will be automatically upgraded to the next tier for the remainder of the billing cycle.</p>
+    
+    <h2 id="liability">4. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by law, HyperCore Systems shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or goodwill, resulting from your use of the Service.</p>
+    
+    <h2 id="termination">5. Termination</h2>
+    <p>We may suspend or terminate your access to the Service immediately, without prior notice or liability, for any breach of these Terms. Upon termination, your right to use the Service will cease immediately, and all data will be permanently deleted within 30 days.</p>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 HyperCore Systems. MIT Licensed.</p>
+</footer>
+</body>
+</html>
