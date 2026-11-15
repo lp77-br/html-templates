@@ -1,0 +1,91 @@
+<!--
+  HTML Templates
+  https://github.com/lp77-br/html-templates
+  Licensed under the MIT License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — Signal Lost</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  body { 
+    display: grid; 
+    place-items: center; 
+    padding: 24px; 
+    text-align: center; 
+  }
+  
+  .error-wrapper { 
+    max-width: 500px; 
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .terminal-snippet {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-sm);
+    padding: 16px 20px;
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-2);
+    margin-bottom: 32px;
+    width: 100%;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  }
+  
+  .terminal-snippet .prompt { color: var(--accent); }
+  .terminal-snippet .err { 
+    color: var(--danger); 
+    margin-top: 8px; 
+    display: block; 
+  }
+  
+  .error-code {
+    font-family: var(--font-mono);
+    font-size: clamp(100px, 20vw, 160px);
+    font-weight: 600;
+    line-height: 0.9;
+    color: var(--text);
+    letter-spacing: -0.05em;
+    margin-bottom: 16px;
+    text-shadow: 0 0 40px rgba(123,157,255,0.2);
+  }
+  
+  .error-wrapper h1 { 
+    font-size: 20px; 
+    margin-bottom: 12px; 
+    text-wrap: auto;
+    letter-spacing: normal;
+  }
+  
+  .error-wrapper p { 
+    color: var(--text-2); 
+    margin-bottom: 32px; 
+    font-size: 15px; 
+    max-width: 400px;
+  }
+</style>
+</head>
+<body>
+<div class="error-wrapper">
+  <div class="terminal-snippet">
+    <div><span class="prompt">$</span> curl -I https://hypercore.sys/api/v1/resource</div>
+    <div>HTTP/1.1 404 Not Found</div>
+    <span class="err">Error: Route.resolve() failed at line 42</span>
+  </div>
+  
+  <div class="error-code">404</div>
+  <h1>Signal Lost</h1>
+  <p>The requested endpoint does not exist in this sector or has been decommissioned.</p>
+  
+  <a href="index.html" class="btn-primary">Return to Base</a>
+</div>
+</body>
+</html>
