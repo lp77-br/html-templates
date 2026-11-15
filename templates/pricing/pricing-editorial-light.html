@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing — Nexus</title>
+<style>
+:root { --bg: #fafaf7; --fg: #1a1a1a; --muted: #6b6b6b;
+  --border: #e5e5e0; --highlight: #ff5c35; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg);
+  color: var(--fg); line-height: 1.5; padding: 60px 24px; -webkit-font-smoothing: antialiased; }
+.container { max-width: 1100px; margin: 0 auto; }
+.header { text-align: center; margin-bottom: 60px; }
+.eyebrow { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--highlight); font-weight: 600; margin-bottom: 16px; }
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 600;
+  letter-spacing: -0.03em; margin-bottom: 16px; }
+.header p { color: var(--muted); font-size: 1.1rem; max-width: 500px; margin: 0 auto; }
+.toggle { display: flex; gap: 4px; margin: 32px auto 0; padding: 4px;
+  background: #fff; border: 1px solid var(--border); border-radius: 999px; width: fit-content; }
+.toggle button { padding: 8px 20px; border: none; background: transparent; cursor: pointer;
+  border-radius: 999px; font-size: 0.85rem; font-weight: 500; color: var(--muted); transition: all .2s; }
+.toggle button.active { background: var(--fg); color: #fff; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.plan { background: #fff; border: 1px solid var(--border); border-radius: 16px;
+  padding: 32px; position: relative; transition: all .2s; }
+.plan:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -20px rgba(0,0,0,0.15); }
+.plan.featured { background: var(--fg); color: #fff; border-color: var(--fg); }
+.plan.featured .muted { color: #aaa; }
+.plan-tag { position: absolute; top: 20px; right: 20px; padding: 4px 10px;
+  background: var(--highlight); color: #fff; border-radius: 6px;
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; }
+.plan-name { font-size: 0.9rem; font-weight: 600; margin-bottom: 12px; }
+.plan-price { font-size: 2.5rem; font-weight: 600; letter-spacing: -0.03em;
+  margin-bottom: 4px; line-height: 1; }
+.plan-price span { font-size: 1rem; font-weight: 400; color: var(--muted); }
+.muted { color: var(--muted); font-size: 0.9rem; margin-bottom: 24px; }
+.plan ul { list-style: none; margin-bottom: 28px; }
+.plan li { padding: 10px 0; font-size: 0.9rem; display: flex; align-items: flex-start;
+  gap: 10px; border-top: 1px solid rgba(0,0,0,0.06); }
+.plan.featured li { border-top-color: rgba(255,255,255,0.1); }
+.plan li::before { content: '✓'; font-weight: 700; flex-shrink: 0; }
+.plan.featured li::before { color: var(--highlight); }
+.btn { display: block; text-align: center; padding: 12px 20px; border-radius: 10px;
+  font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all .2s; }
+.btn-dark { background: var(--fg); color: #fff; }
+.btn-dark:hover { background: #333; }
+.btn-outline { border: 1px solid var(--border); color: var(--fg); background: #fff; }
+.btn-outline:hover { border-color: var(--fg); }
+.btn-light { background: #fff; color: var(--fg); }
+.btn-light:hover { background: #eee; }
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="eyebrow">Pricing</div>
+    <h1>Simple, honest pricing.</h1>
+    <p>No hidden fees. Cancel anytime. Start free, upgrade when you're ready.</p>
+    <div class="toggle">
+      <button class="active">Monthly</button>
+      <button>Yearly (save 20%)</button>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="plan">
+      <div class="plan-name">Starter</div>
+      <div class="plan-price">$0<span>/mo</span></div>
+      <div class="muted">For side projects</div>
+      <ul>
+        <li>1 project</li><li>Community support</li>
+        <li>1GB bandwidth</li><li>Basic analytics</li>
+      </ul>
+      <a href="#" class="btn btn-outline">Get started</a>
+    </div>
+    <div class="plan featured">
+      <div class="plan-tag">POPULAR</div>
+      <div class="plan-name">Pro</div>
+      <div class="plan-price">$19<span>/mo</span></div>
+      <div class="muted">For growing teams</div>
+      <ul>
+        <li>Unlimited projects</li><li>Priority support</li>
+        <li>100GB bandwidth</li><li>Advanced analytics</li>
+        <li>Custom domains</li>
+      </ul>
+      <a href="#" class="btn btn-light">Start free trial</a>
+    </div>
+    <div class="plan">
+      <div class="plan-name">Enterprise</div>
+      <div class="plan-price">Custom</div>
+      <div class="muted">For large organizations</div>
+      <ul>
+        <li>Everything in Pro</li><li>Dedicated support</li>
+        <li>SSO & SAML</li><li>Audit logs</li><li>SLA guarantee</li>
+      </ul>
+      <a href="#" class="btn btn-dark">Contact sales</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
