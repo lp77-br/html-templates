@@ -15,6 +15,33 @@ The project is divided into two main categories:
 
 ---
 
+## 🏆 Featured Kit: HyperCore (Terminal Brutalist)
+
+**[👉 Explore HyperCore](./kits/hyper-core/)**
+
+The most complete kit in this repository. A high-fidelity, dark-themed, terminal-inspired UI designed for infrastructure platforms, developer tools, and API products. 
+
+Built with **pure HTML and CSS**, zero JavaScript, and a strict focus on the "Terminal Brutalist" aesthetic (deep blacks, thin borders, monospace typography, and high-contrast accents).
+
+**Includes 12 fully responsive pages:**
+
+| Page | File | Purpose |
+|------|------|---------|
+| **Landing** | `index.html` | Animated grid background and feature grid. |
+| **Dashboard** | `dashboard.html` | Sidebar layout, metric cards, and data tables. |
+| **Docs** | `docs.html` | Sticky sidebar with pure CSS syntax highlighting. |
+| **Pricing** | `pricing.html` | 3-tier pricing with a highlighted "Production" plan. |
+| **Auth** | `auth.html` | Minimalist login form with monospace inputs. |
+| **404** | `404.html` | Terminal snippet with a massive glowing error code. |
+| **Changelog** | `changelog.html` | System-log style timeline with `[ADD]`, `[FIX]` tags. |
+| **Security** | `security.html` | Compliance badges and a mock audit log. |
+| **Blog** | `blog.html` | Clean, text-focused engineering blog index. |
+| **Settings** | `settings.html` | Account config with pure CSS toggle switches. |
+| **Status** | `status.html` | System health with uptime bars and incidents. |
+| **Terms** | `terms.html` | Legal layout with a sticky table of contents. |
+
+---
+
 ## 🧩 Templates (Single-file)
 
 Standalone HTML files. Just open and edit.
@@ -27,17 +54,17 @@ Standalone HTML files. Just open and edit.
 
 ---
 
-## 🎨 Kits (Multi-page)
+## 🎨 Other Kits (Multi-page)
 
 Complete design systems with shared styles. Keep the folder structure intact to ensure relative links work.
 
-### 1. Nexus SaaS (Purple Aurora)
+### Nexus SaaS (Purple Aurora)
 A dark, modern SaaS starter kit with an animated aurora background and Inter typography.
 
 **Pages:** Landing, Pricing, Auth, 404.
 👉 **[View Kit](./kits/nexus-saas-purple/)**
 
-### 2. Orbital Space (Dark Sci-Fi)
+### Orbital Space (Dark Sci-Fi)
 A sci-fi mission control theme featuring Space Grotesk typography, neon cyan accents, and a CSS starfield.
 
 **Pages:** Landing, Dashboard, Pricing, Auth, 404.
@@ -59,7 +86,7 @@ A sci-fi mission control theme featuring Space Grotesk typography, neon cyan acc
    ```
 2. Navigate to the `kits/` folder.
 3. Open any `index.html` to preview.
-4. To use a kit, copy the entire folder (e.g., `nexus-saas-purple/`) to your project to keep the `assets/` links working.
+4. To use a kit, copy the entire folder (e.g., `kits/hyper-core/`) to your project to keep the `assets/` links working.
 
 ## 📄 License
 
