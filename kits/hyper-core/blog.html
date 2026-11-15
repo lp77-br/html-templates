@@ -1,0 +1,95 @@
+<!--
+  HTML Templates
+  https://github.com/lp77-br/html-templates
+  Licensed under the MIT License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engineering Blog — HyperCore</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .page-header { padding: 80px 24px 40px; max-width: var(--max-w); margin: 0 auto; border-bottom: 1px solid var(--border); }
+  .page-header h1 { font-size: 32px; margin-bottom: 8px; }
+  .page-header p { color: var(--text-2); font-size: 16px; }
+  
+  .blog-list { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); }
+  .blog-post { display: grid; grid-template-columns: 120px 1fr 100px; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--border); text-decoration: none; align-items: baseline; }
+  .blog-post:hover .post-title { color: var(--accent); }
+  
+  .post-date { font-family: var(--font-mono); font-size: 13px; color: var(--text-3); }
+  .post-title { font-family: var(--font-mono); font-size: 18px; font-weight: 500; color: var(--text); transition: color var(--t-fast); margin-bottom: 8px; }
+  .post-excerpt { font-size: 14px; color: var(--text-2); line-height: 1.6; }
+  .post-tag { font-family: var(--font-mono); font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; text-align: right; }
+  
+  @media (max-width: 768px) {
+    .blog-post { grid-template-columns: 1fr; gap: 8px; }
+    .post-tag { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" fill="rgba(123,157,255,0.12)" stroke="#7b9dff" stroke-width="1.4"/><path d="M8.5 9.5 6 12l2.5 2.5M15.5 9.5 18 12l-2.5 2.5M13.5 8l-3 8" stroke="#7b9dff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div class="brand-text"><span>HyperCore</span></div>
+    </a>
+    <nav class="header-nav">
+      <a href="docs.html" class="nav-link">Docs</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="auth.html" class="btn-ghost">Sign In</a>
+    </nav>
+  </div>
+</header>
+
+<header class="page-header">
+  <h1>Engineering Blog</h1>
+  <p>Deep dives into bare-metal performance, eBPF, and edge networking.</p>
+</header>
+
+<main class="blog-list">
+  <a href="#" class="blog-post">
+    <div class="post-date">2026-11-10</div>
+    <div>
+      <h2 class="post-title">Replacing Kubernetes with eBPF and Rust</h2>
+      <p class="post-excerpt">Why we ditched container orchestration for bare-metal routing and direct kernel probes to achieve sub-millisecond latencies.</p>
+    </div>
+    <div class="post-tag">Architecture</div>
+  </a>
+  
+  <a href="#" class="blog-post">
+    <div class="post-date">2026-10-28</div>
+    <div>
+      <h2 class="post-title">How we handle 100M WebSocket connections</h2>
+      <p class="post-excerpt">A technical breakdown of our custom event loop in Rust, memory allocation strategies, and dealing with C10k (and C100M).</p>
+    </div>
+    <div class="post-tag">Backend</div>
+  </a>
+
+  <a href="#" class="blog-post">
+    <div class="post-date">2026-10-15</div>
+    <div>
+      <h2 class="post-title">Zero-downtime deployments at scale</h2>
+      <p class="post-excerpt">Implementing blue-green deployments across 140 edge nodes without dropping a single packet.</p>
+    </div>
+    <div class="post-tag">DevOps</div>
+  </a>
+  
+  <a href="#" class="blog-post">
+    <div class="post-date">2026-09-02</div>
+    <div>
+      <h2 class="post-title">Securing the edge: Zero-Trust IAM</h2>
+      <p class="post-excerpt">Why we require hardware keys (WebAuthn) for all internal API mutations and how we enforce it with mTLS.</p>
+    </div>
+    <div class="post-tag">Security</div>
+  </a>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 HyperCore Systems. MIT Licensed.</p>
+</footer>
+</body>
+</html>
