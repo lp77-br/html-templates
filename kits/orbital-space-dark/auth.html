@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Authentication — Orbital</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  body { display: grid; place-items: center; padding: 24px; }
+  .auth-box { width: 100%; max-width: 420px; position: relative; z-index: 1; }
+  .auth-header { text-align: center; margin-bottom: 40px; }
+  .auth-header .logo { justify-content: center; font-size: 1.5rem; }
+  .auth-card { background: rgba(15, 15, 25, 0.8); backdrop-filter: blur(12px);
+    border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 40px; }
+  .auth-card h1 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 8px; text-align: center; }
+  .auth-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 32px; text-align: center; }
+  .field { margin-bottom: 20px; }
+  .field label { display: block; font-family: var(--font-display); font-size: 0.85rem;
+    color: var(--primary); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .field input { width: 100%; padding: 14px 16px; background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border); border-radius: var(--radius); color: var(--fg);
+    font-size: 0.95rem; transition: all .2s; }
+  .field input:focus { outline: none; border-color: var(--primary);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2); }
+  .auth-card .btn { width: 100%; margin-top: 8px; }
+  .auth-footer { text-align: center; margin-top: 32px; font-size: 0.9rem; color: var(--muted); }
+  .auth-footer a { color: var(--primary); }
+</style>
+</head>
+<body>
+<div class="starfield"></div>
+<div class="auth-box">
+  <div class="auth-header">
+    <a href="index.html" class="logo"><span class="logo-icon"></span>Orbital</a>
+  </div>
+  <div class="auth-card">
+    <h1>System Login</h1>
+    <p>Authenticate to access Mission Control.</p>
+    <form onsubmit="event.preventDefault();">
+      <div class="field">
+        <label for="email">Operator ID</label>
+        <input type="email" id="email" placeholder="commander@orbital.sys" required>
+      </div>
+      <div class="field">
+        <label for="password">Passcode</label>
+        <input type="password" id="password" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Engage</button>
+    </form>
+    <div class="auth-footer">
+      No clearance? <a href="#">Request access</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
