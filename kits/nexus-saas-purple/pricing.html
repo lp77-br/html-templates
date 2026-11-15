@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing — Nexus</title>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .pricing-header { text-align: center; padding: 60px 24px 40px; }
+  .pricing-header h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 600;
+    letter-spacing: -0.03em; margin-bottom: 16px; }
+  .pricing-header p { color: var(--muted); font-size: 1.1rem;
+    max-width: 500px; margin: 0 auto; }
+  .toggle { display: flex; gap: 4px; margin: 32px auto 0; padding: 4px;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 999px; width: fit-content; }
+  .toggle button { padding: 8px 20px; border: none; background: transparent;
+    cursor: pointer; border-radius: 999px; font-size: 0.85rem; font-weight: 500;
+    color: var(--muted); transition: all .2s; font-family: inherit; }
+  .toggle button.active { background: var(--fg); color: var(--bg); }
+  .plan-grid { display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 20px; max-width: 1100px; margin: 40px auto 0; padding: 0 24px; }
+  
+  .plan { background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 32px; position: relative;
+    transition: all .2s; display: flex; flex-direction: column; }
+    
+  .plan:hover { transform: translateY(-4px); border-color: var(--border-strong); }
+  .plan.featured {
+    background: linear-gradient(180deg, rgba(99,102,241,0.08), rgba(168,85,247,0.04));
+    border-color: rgba(99,102,241,0.4);
+    box-shadow: 0 20px 60px -20px rgba(99,102,241,0.4);
+  }
+  .plan-tag { position: absolute; top: 20px; right: 20px; padding: 4px 10px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #fff; border-radius: 6px; font-size: 0.7rem;
+    font-weight: 600; letter-spacing: 0.05em; }
+  .plan-name { font-size: 0.85rem; font-weight: 600; margin-bottom: 12px;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+  .plan-price { font-size: 2.5rem; font-weight: 600;
+    letter-spacing: -0.03em; margin-bottom: 4px; line-height: 1; }
+  .plan-price span { font-size: 1rem; font-weight: 400; color: var(--muted); }
+  .plan-desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 24px; }
+  .plan ul { margin-bottom: 28px; }
+  .plan li { padding: 10px 0; font-size: 0.9rem; display: flex;
+    align-items: flex-start; gap: 10px; border-top: 1px solid var(--border); }
+  .plan li::before { content: '✓'; font-weight: 700; flex-shrink: 0;
+    color: var(--accent); }
+    
+  .plan .btn { display: block; width: 100%; text-align: center; margin-top: auto; }
+  
+  @media (max-width: 768px) { .plan-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="aurora"></div>
+<nav class="nav">
+  <a href="index.html" class="logo">Ne<span>xus</span></a>
+  <div class="nav-links">
+    <a href="index.html#features">Features</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="auth.html">Sign in</a>
+  </div>
+</nav>
+<header class="pricing-header">
+  <div class="badge" style="margin-bottom: 16px;">
+    <span class="badge-dot"></span>Simple pricing
+  </div>
+  <h1 class="gradient-text">Honest pricing, no surprises.</h1>
+  <p>Start free. Upgrade when you're ready. Cancel anytime.</p>
+  <div class="toggle">
+    <button class="active">Monthly</button>
+    <button>Yearly · save 20%</button>
+  </div>
+</header>
+<section class="plan-grid">
+  <div class="plan">
+    <div class="plan-name">Starter</div>
+    <div class="plan-price">$0<span>/mo</span></div>
+    <p class="plan-desc">For side projects</p>
+    <ul>
+      <li>1 project</li><li>Community support</li>
+      <li>1GB bandwidth</li><li>Basic analytics</li>
+    </ul>
+    <a href="auth.html" class="btn btn-ghost">Get started</a>
+  </div>
+  <div class="plan featured">
+    <div class="plan-tag">POPULAR</div>
+    <div class="plan-name">Pro</div>
+    <div class="plan-price">$19<span>/mo</span></div>
+    <p class="plan-desc">For growing teams</p>
+    <ul>
+      <li>Unlimited projects</li><li>Priority support</li>
+      <li>100GB bandwidth</li><li>Advanced analytics</li>
+      <li>Custom domains</li>
+    </ul>
+    <a href="auth.html" class="btn btn-primary">Start free trial</a>
+  </div>
+  <div class="plan">
+    <div class="plan-name">Enterprise</div>
+    <div class="plan-price">Custom</div>
+    <p class="plan-desc">For large organizations</p>
+    <ul>
+      <li>Everything in Pro</li><li>Dedicated support</li>
+      <li>SSO &amp; SAML</li><li>Audit logs</li><li>SLA guarantee</li>
+    </ul>
+    <a href="#" class="btn btn-ghost">Contact sales</a>
+  </div>
+</section>
+<footer class="footer">© 2026 Nexus. All rights reserved.</footer>
+</body>
+</html>
