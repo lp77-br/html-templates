@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mission Control — Orbital</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .dashboard-layout { display: flex; min-height: 100vh; }
+  .sidebar { width: 260px; border-right: 1px solid var(--border); padding: 32px 24px; display: flex; flex-direction: column; }
+  .sidebar .logo { margin-bottom: 48px; padding-left: 8px; }
+  .sidebar-nav { display: flex; flex-direction: column; gap: 8px; }
+  .sidebar-nav a { display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+    border-radius: var(--radius); color: var(--muted); font-size: 0.95rem; transition: all .2s; }
+  .sidebar-nav a:hover, .sidebar-nav a.active { background: rgba(0, 240, 255, 0.1); color: var(--primary); }
+  
+  .main-content { flex: 1; padding: 48px; }
+  .page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+  .page-header h1 { font-family: var(--font-display); font-size: 2rem; }
+  
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 48px; }
+  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+  .stat-label { font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .stat-value { font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--fg); }
+  .stat-value span { font-size: 1rem; color: var(--primary); margin-left: 8px; }
+  
+  .data-table { width: 100%; border-collapse: collapse; text-align: left; }
+  .data-table th { padding: 16px; font-family: var(--font-display); font-size: 0.85rem;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+  .data-table td { padding: 16px; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+  .status { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px;
+    border-radius: 999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+  .status.active { background: rgba(0, 240, 255, 0.1); color: var(--primary); border: 1px solid rgba(0, 240, 255, 0.3); }
+  .status.warning { background: rgba(255, 0, 85, 0.1); color: var(--secondary); border: 1px solid rgba(255, 0, 85, 0.3); }
+  
+  @media (max-width: 1024px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) {
+    .dashboard-layout { flex-direction: column; }
+    .sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--border); }
+    .main-content { padding: 24px; }
+    .stats-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="starfield"></div>
+<div class="dashboard-layout">
+  <aside class="sidebar">
+    <a href="index.html" class="logo"><span class="logo-icon"></span>Orbital</a>
+    <nav class="sidebar-nav">
+      <a href="#" class="active">📊 Overview</a>
+      <a href="#">🚀 Deployments</a>
+      <a href="#">📡 Telemetry</a>
+      <a href="#">⚙️ Settings</a>
+      <a href="index.html" style="margin-top: auto;">← Back to site</a>
+    </nav>
+  </aside>
+  <main class="main-content">
+    <header class="page-header">
+      <div>
+        <h1>Mission Control</h1>
+        <p style="color: var(--muted);">System status: <span style="color: var(--primary);">Nominal</span></p>
+      </div>
+      <button class="btn btn-primary">New Launch</button>
+    </header>
+    
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Active Nodes</div>
+        <div class="stat-value">142</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Requests / sec</div>
+        <div class="stat-value">48.2k <span>↑ 12%</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Global Latency</div>
+        <div class="stat-value">24ms <span>↓ 4ms</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Error Rate</div>
+        <div class="stat-value">0.01%</div>
+      </div>
+    </section>
+    
+    <section class="card" style="padding: 0; overflow-x: auto;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Mission ID</th>
+            <th>Region</th>
+            <th>Status</th>
+            <th>Uptime</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>#ORB-942</strong></td>
+            <td>us-east-1</td>
+            <td><span class="status active">Active</span></td>
+            <td>142d 12h</td>
+            <td><a href="#" style="color: var(--primary);">Logs</a></td>
+          </tr>
+          <tr>
+            <td><strong>#ORB-941</strong></td>
+            <td>eu-central-1</td>
+            <td><span class="status active">Active</span></td>
+            <td>89d 04h</td>
+            <td><a href="#" style="color: var(--primary);">Logs</a></td>
+          </tr>
+          <tr>
+            <td><strong>#ORB-938</strong></td>
+            <td>ap-south-1</td>
+            <td><span class="status warning">Degraded</span></td>
+            <td>12d 08h</td>
+            <td><a href="#" style="color: var(--primary);">Logs</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</div>
+</body>
+</html>
