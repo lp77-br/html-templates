@@ -1,0 +1,106 @@
+<!--
+  HTML Templates
+  https://github.com/lp77-br/html-templates
+  Licensed under the MIT License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Authentication — HyperCore</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  body { display: grid; place-items: center; padding: 24px; }
+  .auth-container { width: 100%; max-width: 400px; }
+  .auth-header { text-align: center; margin-bottom: 32px; }
+  .auth-header .site-logo { justify-content: center; }
+  
+  .auth-card { 
+    background: var(--surface); 
+    border: 1px solid var(--border); 
+    border-radius: var(--r); 
+    padding: 40px 32px; 
+  }
+  
+  .auth-card h1 { 
+    font-size: 20px; 
+    margin-bottom: 8px; 
+    text-align: center; 
+    text-wrap: auto;
+    letter-spacing: normal;
+  }
+  
+  .auth-card p { 
+    color: var(--text-3); 
+    font-size: 14px; 
+    margin-bottom: 32px; 
+    text-align: center; 
+  }
+  
+  .field { margin-bottom: 20px; }
+  .field label { 
+    display: block; 
+    font-family: var(--font-mono); 
+    font-size: 12px; 
+    color: var(--text-2); 
+    margin-bottom: 8px; 
+    text-transform: uppercase; 
+    letter-spacing: 0.05em; 
+  }
+  .field input { 
+    width: 100%; 
+    padding: 12px 16px; 
+    background: var(--bg); 
+    border: 1px solid var(--border); 
+    border-radius: var(--r-sm); 
+    color: var(--text); 
+    font-family: var(--font-mono); 
+    font-size: 14px; 
+    transition: all var(--t-fast); 
+  }
+  .field input:focus { 
+    outline: none; 
+    border-color: var(--accent); 
+    box-shadow: 0 0 0 3px var(--accent-dim); 
+  }
+  .auth-card .btn-primary { width: 100%; margin-top: 8px; }
+  
+  .auth-footer { text-align: center; margin-top: 24px; font-size: 13px; color: var(--text-3); }
+  .auth-footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="auth-container">
+  <div class="auth-header">
+    <a href="index.html" class="site-logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none">
+          <rect x="2" y="2" width="20" height="20" rx="4" fill="rgba(123,157,255,0.12)" stroke="#7b9dff" stroke-width="1.4"/>
+          <path d="M8.5 9.5 6 12l2.5 2.5M15.5 9.5 18 12l-2.5 2.5M13.5 8l-3 8" stroke="#7b9dff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <div class="brand-text"><span>HyperCore</span></div>
+    </a>
+  </div>
+  <div class="auth-card">
+    <h1>System Login</h1>
+    <p>Authenticate to access the console.</p>
+    <form onsubmit="event.preventDefault();">
+      <div class="field">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="admin@hypercore.sys" required>
+      </div>
+      <div class="field">
+        <label for="password">Passphrase</label>
+        <input type="password" id="password" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="btn-primary">Authenticate</button>
+    </form>
+    <div class="auth-footer">
+      No credentials? <a href="#">Request access</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
